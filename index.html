@@ -1,0 +1,70 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <title>classic popcat click</title>
+        <style>
+            /* Reset 頁面間距並設定字型 */
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: sans-serif;
+            }
+
+            .header{
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* 水平置中 */
+                justify-content: flex-start; /* 不垂直置中，靠上排列 */
+                background-color: #bdaa90;
+            }
+            .title{
+                width: 80%;
+                margin-top: 2em;
+                max-width: 600px; /* 標題 box 最大寬度 */
+            }
+            .cat-img{
+                width: 100%;
+                text-align: center;
+                color: #ffffff;
+                font-size: 80px;
+                -webkit-text-stroke: 3px #000000;
+                /* 填滿剩餘空間 */
+                flex: 1;
+                /* 最大寬度限制 */
+                max-width: 800px;
+                /* 防止文字被選取 */
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            /* 背景圖設定：使用 id #p 指向 imgs/p.png，靠下、填滿容器 (contain)、不重複 */
+            #p{
+                background-image: url('imgs/p.png');
+                background-position: bottom center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                /* 讓 #p 也擴展為可伸長的 flex 子項目（若需要） */
+                display: block;
+                box-sizing: border-box;
+            }
+            /* 隱藏的文字區塊，僅新增背景來源，不顯示 */
+            #op{
+                background-image: url('imgs/op.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center bottom;
+                display: none; /* 不需要顯示 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img class="title" src="imgs/popcat.svg" alt="POPCAT">
+            <div class="cat-img" id="p">0000</div>
+        </div>
+    </body>
+</html>
