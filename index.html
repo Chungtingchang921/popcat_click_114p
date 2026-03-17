@@ -57,7 +57,6 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center bottom;
-                display: none; /* 不需要顯示 */
             }
         </style>
     </head>
@@ -75,8 +74,13 @@
                 console.log(count);
                 catImg.innerHTML = count;
                 audio.play();
+                catImg.id='op';
+            }
+            function close(){
+                catImg.id='p';
             }
             document.addEventListener('mousedown',add);
+            document.addEventListener('mouseup',close);
 
 
             
